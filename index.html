@@ -3,15 +3,68 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Big Things for iPhone — every Big Banana, Merino and Galah on one map</title>
-  <meta name="description" content="A free app to find Australia's 481 big things — the Big Banana, the Big Merino and hundreds more — on a map, near you, offline. For iPhone and iPad.">
+  <title>Big Things for iPhone: every Big Banana, Merino and Galah on one map</title>
+  <meta name="description" content="A free iPhone and iPad app to find Australia's 481 big things, from the Big Banana to the Big Merino, on a map near you. Works offline, no account, no ads.">
+  <link rel="canonical" href="https://halans.github.io/bigthings/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#FDF6E8" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#26231D" media="(prefers-color-scheme: dark)">
-  <meta property="og:title" content="Big Things for iPhone">
-  <meta property="og:description" content="Australia's 481 big things on a map, near you, offline.">
-  <meta property="og:image" content="images/app-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Big Things">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:url" content="https://halans.github.io/bigthings/">
+  <meta property="og:title" content="Big Things for iPhone: Australia's big things on one map">
+  <meta property="og:description" content="481 big bananas, merinos, galahs and more on a map, near you, offline. Free for iPhone and iPad.">
+  <meta property="og:image" content="https://halans.github.io/bigthings/images/app-icon.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="The Big Things app icon">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Big Things for iPhone: Australia's big things on one map">
+  <meta name="twitter:description" content="481 big bananas, merinos, galahs and more on a map, near you, offline. Free for iPhone and iPad.">
+  <meta name="twitter:image" content="https://halans.github.io/bigthings/images/app-icon.png">
+
   <link rel="icon" href="images/app-icon.png">
   <link rel="apple-touch-icon" href="images/app-icon.png">
+  <link rel="preload" href="fonts/Caprasimo-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/Inter-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="fonts/Inter-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="images/screens/map.jpg" as="image" fetchpriority="high">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://halans.github.io/bigthings/#website",
+        "url": "https://halans.github.io/bigthings/",
+        "name": "Big Things",
+        "inLanguage": "en-AU"
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://halans.github.io/bigthings/#app",
+        "name": "Big Things",
+        "description": "A free app to find Australia's 481 big things, from the Big Banana to the Big Merino, on a map near you. Works offline.",
+        "url": "https://halans.github.io/bigthings/",
+        "image": "https://halans.github.io/bigthings/images/app-icon.png",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "iOS 27 or later",
+        "isAccessibleForFree": true,
+        "inLanguage": "en-AU",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "AUD" },
+        "screenshot": [
+          "https://halans.github.io/bigthings/images/screens/map.jpg",
+          "https://halans.github.io/bigthings/images/screens/list.jpg",
+          "https://halans.github.io/bigthings/images/screens/detail.jpg"
+        ],
+        "publisher": { "@type": "Person", "name": "Halans" }
+      }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -50,7 +103,7 @@
           <p class="fine">Free. No account, no ads, no tracking.</p>
         </div>
         <div class="phone">
-          <img src="images/screens/map.jpg" width="644" height="1400" alt="The Big Things map of Australia, with clusters of pins showing how many big things are in each area.">
+          <img src="images/screens/map.jpg" width="644" height="1400" fetchpriority="high" alt="The Big Things map of Australia, with clusters of pins showing how many big things are in each area.">
         </div>
       </div>
     </section>
@@ -213,7 +266,7 @@
       <p>Big Things · Made in Australia. Requires iOS 27 or later.</p>
       <nav aria-label="Footer">
         <a href="privacy.html">Privacy</a>
-        <a href="mailto:support@halans.dev">Support</a>
+        <a href="support.html">Support</a>
         <a href="https://bigthings.downunder.blue">Web map</a>
         <a href="https://bigthings.downunder.blue/credits">Photo credits</a>
       </nav>

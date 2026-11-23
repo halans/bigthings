@@ -1,7 +1,7 @@
 # Big Things for iPhone — marketing site
 
 A static, dependency-free site for the iOS app: `index.html` (home), `privacy.html`
-(the privacy policy the App Store asks for) and `styles.css`. No build step: open
+(the privacy policy the App Store asks for), `support.html` and `styles.css`. No build step: open
 `index.html` in a browser, or host the folder anywhere that serves static files
 (GitHub Pages, Cloudflare Pages, Netlify, or a folder on bigthings.downunder.blue).
 
@@ -19,8 +19,13 @@ Colours, fonts and the outlined "sticker" style come from the app's `Theme.swift
   to `#download` and the web map. Once the app is live, replace them with the App Store
   URL and Apple's official "Download on the App Store" badge (see Apple's marketing
   guidelines), and update the Download section's text.
-- **Support.** support@halans.dev is linked from both footers and the privacy page. For the
-  App Store's Support URL, use this site's home page (or add a support page).
+- **Support.** `support.html` is the support page; use its URL
+  (https://halans.github.io/bigthings/support.html) as the App Store's Support URL, and
+  `privacy.html` as the Privacy Policy URL. support@halans.dev is the contact address.
+- **SEO.** Canonical, Open Graph and sitemap URLs assume https://halans.github.io/bigthings/.
+  If the site moves, search and replace that URL in the HTML files and `sitemap.xml`. Submit
+  `sitemap.xml` in Google Search Console (robots.txt isn't used: GitHub Pages project sites
+  can't serve one at the host root).
 - **Numbers.** The stats and category counts (481 mapped, 300 with photos, 1,075 claimed
   nationally) are from the dataset of 2026-11-21. Update them when the dataset grows.
 - **Privacy policy.** It describes the app as built on 2026-11-23: no analytics, location
