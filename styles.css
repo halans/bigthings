@@ -1,0 +1,245 @@
+/* Big Things for iPhone — marketing site.
+   Tokens match the app's Theme.swift (which mirrors bigthings.downunder.blue):
+   Caprasimo for display type, Inter for text, cream paper, ink outlines, terracotta accent,
+   and the hard offset "sticker" shadow. The dark palette is the app's too. */
+
+@font-face { font-family: "Caprasimo"; src: url("fonts/Caprasimo-Regular.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+
+:root {
+  --ink: #1B1A17;
+  --ink-soft: #4A463E;
+  --cream: #FDF6E8;
+  --cream-2: #F6EBD6;
+  --paper: #FFFDF7;
+  --line: #E3D6BD;
+  --earth: #C8452B;
+  --on-earth: #FFFFFF;
+  --sun: #F0A71C;
+  --euc: #2F7D52;
+  --sky: #2A7FBF;
+  --plum: #7C4DAB;
+  --prawn: #E0567F;
+  --steel: #5B6472;
+  --brew: #B5651D;
+  --void: #4B4A67;
+  --bronze: #8A6D3B;
+  --shadow: #1B1A17;
+
+  --radius: 14px;
+  --max: 1120px;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #F3ECDD;
+    --ink-soft: #B9AF9B;
+    --cream: #26231D;
+    --cream-2: #2F2B23;
+    --paper: #1B1915;
+    --line: #453F33;
+    --earth: #E8694D;
+    --on-earth: #1B1A17;
+    --euc: #4FB37C;
+    --sky: #5AA6E0;
+    --plum: #A77FD6;
+    --prawn: #EE7B9D;
+    --steel: #8B95A5;
+    --brew: #D08436;
+    --void: #8584B0;
+    --bronze: #B89A63;
+    --shadow: #000000;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font: 400 1.0625rem/1.6 "Inter", system-ui, sans-serif;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--earth); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; border-radius: 6px; }
+
+h1, h2, h3 { font-family: "Caprasimo", Georgia, serif; font-weight: 400; line-height: 1.1; margin: 0; }
+h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); color: var(--earth); }
+h2 { font-size: clamp(1.9rem, 4vw, 2.7rem); color: var(--earth); }
+h3 { font-size: 1.35rem; color: var(--ink); }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 16px; top: 16px; background: var(--paper); padding: 8px 12px; z-index: 10; }
+
+/* Small-caps section label, like the app's SectionLabel. */
+.label {
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-soft); margin: 0 0 10px;
+}
+
+/* ---------- Header ---------- */
+
+.site-header { padding: 18px 0; }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--earth); }
+.brand img { width: 44px; height: 44px; border-radius: 11px; border: 2px solid var(--ink); }
+.brand span { font-family: "Caprasimo", Georgia, serif; font-size: 1.5rem; }
+.site-nav { display: flex; gap: 20px; font-weight: 600; font-size: 0.95rem; }
+.site-nav a { color: var(--ink); text-decoration: none; }
+.site-nav a:hover { color: var(--earth); }
+
+/* ---------- Buttons ---------- */
+
+/* Chunky outlined button that presses into its shadow, like the app's sticker buttons. */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 22px; border-radius: 12px;
+  border: 2px solid var(--ink); background: var(--paper); color: var(--ink);
+  font-weight: 700; text-decoration: none;
+  box-shadow: 0 3px 0 var(--shadow);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+.btn:hover { text-decoration: none; }
+.btn:active { transform: translateY(3px); box-shadow: 0 0 0 var(--shadow); }
+.btn-primary { background: var(--sun); color: #1B1A17; }
+.btn svg { width: 22px; height: 22px; flex: none; }
+.btn small { display: block; font-size: 0.7rem; font-weight: 600; line-height: 1.1; }
+.btn .two-line { line-height: 1.15; text-align: left; }
+
+/* ---------- Hero ---------- */
+
+.hero { padding: 40px 0 72px; }
+.hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+.hero p.lede { font-size: 1.25rem; color: var(--ink-soft); max-width: 34ch; margin: 22px 0 30px; }
+.hero .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.hero .fine { font-size: 0.9rem; color: var(--ink-soft); margin-top: 18px; }
+
+/* A phone outline around the app screenshots. */
+.phone {
+  width: min(320px, 78vw); margin: 0 auto;
+  border: 3px solid var(--ink); border-radius: 46px; padding: 9px;
+  background: #0E0D0B; box-shadow: 0 8px 0 var(--shadow);
+}
+.phone img { border-radius: 37px; width: 100%; height: auto; }
+.hero .phone { transform: rotate(2deg); }
+
+/* ---------- Stats ---------- */
+
+.stats { padding: 0 0 72px; }
+.stats ul {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+}
+.stats li {
+  background: var(--paper); border: 2px solid var(--ink); border-radius: var(--radius);
+  box-shadow: 0 3px 0 var(--shadow); padding: 20px; text-align: center;
+}
+.stats strong { display: block; font-family: "Caprasimo", Georgia, serif; font-weight: 400; font-size: 2.4rem; color: var(--earth); line-height: 1.1; }
+.stats span { font-size: 0.95rem; color: var(--ink-soft); font-weight: 600; }
+
+/* ---------- Sections ---------- */
+
+section { padding: 72px 0; }
+section.alt { background: var(--cream-2); border-top: 2px solid var(--line); border-bottom: 2px solid var(--line); }
+.section-head { max-width: 640px; margin-bottom: 40px; }
+.section-head p { color: var(--ink-soft); margin: 14px 0 0; }
+
+/* ---------- Features ---------- */
+
+.features { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+.feature {
+  background: var(--paper); border: 2px solid var(--ink); border-radius: var(--radius);
+  box-shadow: 0 3px 0 var(--shadow); padding: 22px;
+}
+.feature .icon {
+  width: 46px; height: 46px; border-radius: 50%; border: 2px solid var(--ink);
+  display: grid; place-items: center; font-size: 1.35rem; margin-bottom: 14px;
+}
+.feature p { margin: 8px 0 0; color: var(--ink-soft); font-size: 0.98rem; }
+
+/* ---------- Categories ---------- */
+
+.chips { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0; padding: 0; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px; border-radius: 999px; border: 2px solid var(--ink);
+  background: var(--tint, var(--cream)); color: #1B1A17;
+  font-weight: 600; font-size: 0.98rem; box-shadow: 0 2px 0 var(--shadow);
+}
+.chip b { font-weight: 700; opacity: 0.7; }
+
+/* ---------- Screenshots ---------- */
+
+.screens { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; align-items: start; }
+.screens figure { margin: 0; text-align: center; }
+.screens figcaption { margin-top: 18px; font-weight: 600; }
+.screens figcaption span { display: block; font-weight: 400; color: var(--ink-soft); font-size: 0.95rem; }
+
+/* ---------- Duo ---------- */
+
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.callout {
+  background: var(--paper); border: 2px solid var(--ink); border-left: 8px solid var(--sun);
+  border-radius: var(--radius); padding: 22px 24px; box-shadow: 0 3px 0 var(--shadow);
+}
+.callout ul { margin: 10px 0 0; padding-left: 20px; color: var(--ink-soft); }
+.callout li + li { margin-top: 6px; }
+
+/* ---------- Data ---------- */
+
+.sources { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.sources li {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  padding: 14px 18px; border: 2px solid var(--line); border-radius: 12px; background: var(--paper);
+}
+.sources .licence { color: var(--ink-soft); font-size: 0.92rem; font-weight: 600; }
+
+/* ---------- Download ---------- */
+
+.download { text-align: center; }
+.download img { width: 120px; height: 120px; border-radius: 27px; border: 3px solid var(--ink); box-shadow: 0 5px 0 var(--shadow); margin: 0 auto 28px; }
+.download p { color: var(--ink-soft); max-width: 46ch; margin: 14px auto 28px; }
+
+/* ---------- Footer ---------- */
+
+.site-footer { padding: 36px 0 48px; border-top: 2px solid var(--line); font-size: 0.92rem; color: var(--ink-soft); }
+.site-footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; }
+.site-footer nav { display: flex; gap: 20px; flex-wrap: wrap; }
+.site-footer a { color: var(--ink-soft); }
+
+/* ---------- Prose pages (privacy) ---------- */
+
+.prose { max-width: 720px; padding: 32px 24px 72px; margin: 0 auto; }
+.prose h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
+.prose h2 { font-size: 1.6rem; margin-top: 40px; }
+.prose .updated { color: var(--ink-soft); font-weight: 600; margin-top: 12px; }
+.prose p, .prose li { color: var(--ink); }
+.prose li + li { margin-top: 8px; }
+
+/* ---------- Narrow screens ---------- */
+
+@media (max-width: 860px) {
+  .hero .wrap, .duo { grid-template-columns: 1fr; }
+  .hero { padding-top: 16px; }
+  .hero .phone { transform: none; }
+  .stats ul { grid-template-columns: repeat(2, 1fr); }
+  .screens { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; }
+  .site-nav { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+  .btn:active { transform: none; }
+}
